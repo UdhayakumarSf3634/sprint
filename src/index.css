@@ -458,8 +458,17 @@ opacity: 1;
   .inner-cadr {
       width: calc(23.9% - 10px);
   }
+  .mainimagetodo,
+  .mainimageprogress,
+  .mainimagetest,
+  .mainimagedone {
+      width: 60px;
+  }
+  .detailcontainertodo{
+        padding-left: 16px;
+  }
 }
-@media (min-width: 1400px) and (max-width: 1900px) {
+/* @media (min-width: 1400px) and (max-width: 1900px) {
   .mainimagetodo,
   .mainimageprogress,
   .mainimagetest,
@@ -482,7 +491,7 @@ opacity: 1;
   .mainimagedone {
     width: 17%;
   }
-}
+} */
 @media (min-width: 701px) and (max-width: 1170px) {
   .inner-cadr {
     width: calc(23% - 10px);
