@@ -429,7 +429,7 @@ let gridObj = React.useRef<any>();
   };
   ///// Gantt
   const ganttcolumns = [
-    { field: 'Id' },
+    { field: 'Id',width:'64px' },
     { field: 'Subject', width: '350px' },
     { field: 'StartTime' },
     { field: 'EndTime' },
@@ -1041,7 +1041,9 @@ let gridObj = React.useRef<any>();
       }
       storeNewRecord = args.data
       const projectValue = topDropDownInstance?.current.value as string | undefined;
-      updateSprintData(projectValue, gridObj, storeNewRecord);
+      if (args.action == 'add') {
+        updateSprintData(projectValue, gridObj, storeNewRecord);
+      }
       updateDataSourceObject(
         gridObj.current.dataSource,
         args.data.Id,

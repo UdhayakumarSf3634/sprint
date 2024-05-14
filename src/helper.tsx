@@ -35,28 +35,34 @@ export const getTags = (data: string): JSX.Element[] => {
     let tags: string[] = data.split(',');
     for (let tag of tags) {
       let backgroundColor = '';
+      let color = '';
       switch (tag.trim()) {
         case 'Bug':
-          backgroundColor = '#ffcccc';
+          backgroundColor = 'rgba(255, 157, 157, 1)';
+          color = 'rgba(130, 38, 38, 1)';
           break;
         case 'Customer Task':
-          backgroundColor = '#c1e2f4';
+          backgroundColor = 'rgba(213, 235, 249, 1)';
+          color = 'rgba(0, 95, 156, 1)';
           break;
         case 'Internal Request':
-          backgroundColor = '#f0f0f0';
+          backgroundColor = 'rgba(229, 231, 235, 1)';
+          color = 'rgba(81, 81, 81, 1)';
           break;
         case 'Release Bug':
-          backgroundColor = '#ffe0b2';
+          backgroundColor = 'rgba(251, 236, 211, 1)';
+          color = 'rgba(139, 87, 0, 1)';
           break;
         case 'Breaking Issue':
-          backgroundColor = '#ff9999';
+          backgroundColor = 'rgba(253, 222, 221, 1)';
+          color = 'rgba(170, 8, 8, 1)';
           break;
         default:
           backgroundColor = '#ffffff';
           break;
       }
       tagElements.push(
-        <div key={tag} className="e-card-tag-field e-tooltip-text" style={{ backgroundColor: backgroundColor }}>
+        <div key={tag} className="e-card-tag-field e-tooltip-text" style={{ backgroundColor: backgroundColor, color: color }}>
           {tag}
         </div>
       );
@@ -102,21 +108,21 @@ export const cardRendered = (args: any) => {
 // Gantt Function
 export const queryTaskbarInfo = (args: any) => {
   if (args.data.taskData.Status == 'InProgress') {
-    args.progressBarBgColor = 'rgba(201, 167, 244, 1)';
-    args.taskbarBgColor = 'rgba(201, 167, 244, 0.4)';
-    args.taskbarBorderColor = 'rgba(201, 167, 244, 1)';
+    args.progressBarBgColor = 'rgba(222, 204, 251, 1)';
+    args.taskbarBgColor = 'rgba(222, 204, 251, 0.6)';
+    args.taskbarBorderColor = 'rgba(222, 204, 251, 1)';
   } else if (args.data.taskData.Status == 'Open') {
-    args.progressBarBgColor = 'rgba(194, 220, 240, 1)';
-    args.taskbarBgColor = 'rgba(194, 220, 240, 0.4)';
-    args.taskbarBorderColor = 'rgba(194, 220, 240, 1)';
+    args.progressBarBgColor = 'rgba(203, 228, 252, 1)';
+    args.taskbarBgColor = 'rgba(203, 228, 252, 1)';
+    args.taskbarBorderColor = 'rgba(203, 228, 252, 1)';
   } else if (args.data.taskData.Status == 'Done') {
-    args.progressBarBgColor = 'rgba(182, 214, 171, 1)';
-    args.taskbarBgColor = 'rgba(182, 214, 171, 0.4)';
-    args.taskbarBorderColor = 'rgba(182, 214, 171, 1)';
+    args.progressBarBgColor = 'rgba(204, 234, 189, 1)';
+    args.taskbarBgColor = 'rgba(204, 234, 189, 1)';
+    args.taskbarBorderColor = 'rgba(204, 234, 189, 1)';
   } else if (args.data.taskData.Status == 'Testing') {
-    args.progressBarBgColor = 'rgba(244, 218, 168, 1)';
-    args.taskbarBgColor = 'rgba(244, 218, 168, 0.4)';
-    args.taskbarBorderColor = 'rgba(244, 218, 168, 1)';
+    args.progressBarBgColor = 'rgba(254, 234, 192, 1)';
+    args.taskbarBgColor = 'rgba(254, 234, 192, 0.6)';
+    args.taskbarBorderColor = 'rgba(254, 234, 192, 1)';
   }
 };
 
@@ -127,14 +133,17 @@ const applyCategoryColor = (args: any, currentView: any) => {
     return;
   }
   if (args.data.Status === 'Done') {
-    args.element.style.backgroundColor = 'rgba(182, 214, 171, 1)';
+    args.element.style.backgroundColor = 'rgba(204, 234, 189, 1)';
+    args.element.style.color = 'rgba(38, 38, 38, 1)'
   } else if (args.data.Status === 'Open') {
-    args.element.style.backgroundColor = 'rgba(194, 220, 240, 1)';
+    args.element.style.backgroundColor = 'rgba(203, 228, 252, 1)';
+    args.element.style.color = 'rgba(38, 38, 38, 1)'
   } else if (args.data.Status === 'InProgress') {
-    args.element.style.backgroundColor = 'rgba(201, 167, 244, 1)';
-    args.element.style.border = 'rgba(160, 133, 195, 1)';
+    args.element.style.backgroundColor = 'rgba(222, 204, 251, 1)';
+    args.element.style.color = 'rgba(38, 38, 38, 1)'
   } else if (args.data.Status === 'Testing') {
-    args.element.style.backgroundColor = 'rgba(244, 218, 168, 1)';
+    args.element.style.backgroundColor = 'rgba(254, 234, 192, 1)';
+    args.element.style.color = 'rgba(38, 38, 38, 1)'
   }
 };
 export const scheduleeventRendered = (args: any, scheduleObj: any) => {
