@@ -171,12 +171,11 @@ body, html {
 .inner-cadr {
   width: calc(23.7% - 10px);
   border: 1.5px solid #f0f0f0;
-  padding: 15px;
-  padding-left: 0;
+  padding: 30px 15px 30px 12px;
   margin-right: 32px;
-  margin-bottom: 10px;
+  margin-bottom: 24px;
   box-sizing: border-box;
-  border-radius: 5px;
+  border-radius: 8px;
   display: flex;
   flex-direction: row;
 }
@@ -293,8 +292,6 @@ body, html {
 }
 .add-overflow {
   overflow-y: auto;
-  height :64vh;
-  max-height: 64vh; /* Set max-height to 70% of viewport height */
 }
 #component-render-grid {
   height: 78% !important;
@@ -462,10 +459,10 @@ opacity: 1;
   .mainimageprogress,
   .mainimagetest,
   .mainimagedone {
-      width: 60px;
+    width: 60px;
   }
   .detailcontainertodo{
-        padding-left: 16px;
+      padding-left: 16px;
   }
 }
 /* @media (min-width: 1400px) and (max-width: 1900px) {
@@ -494,7 +491,8 @@ opacity: 1;
 } */
 @media (min-width: 701px) and (max-width: 1170px) {
   .inner-cadr {
-    width: calc(23% - 10px);
+    width: calc(22.5% - 10px);
+    padding: 20px 15px 20px 12px;
   }
 }
 @media (max-width: 700px) {
@@ -538,11 +536,6 @@ opacity: 1;
   #component-render-gantt {
       width: 92vw !important;
   }
-  .add-overflow {
-      overflow-y: auto;
-      height :70vh;
-      max-height: 70vh; /* Set max-height to 70% of viewport height */
-  }
   #component-render-grid {
       height: 80% !important;
   }
@@ -551,11 +544,6 @@ opacity: 1;
 @media only screen and (min-width: 1900px) {
   #component-render-gantt {
       width: 94vw !important;
-  }
-  .add-overflow {
-      overflow-y: auto;
-      height :75vh;
-      max-height: 75vh; /* Set max-height to 70% of viewport height */
   }
   #component-render-grid {
       height: 80% !important;
@@ -584,9 +572,12 @@ opacity: 1;
 }
 @media (min-width: 800px) and (max-width: 855px) {
   .inner-cadr {
-      padding: 4px;
+      padding: 10px 5px 10px 2px;
   }
-  .mainimagetodo {
+  .mainimagetodo,
+  .mainimageprogress,
+  .mainimagetest,
+  .mainimagedone  {
       width: 30%;
   }
   .texttodo {
@@ -668,9 +659,12 @@ opacity: 1;
 }
 @media (min-width: 700px) and (max-width: 800px) {
   .inner-cadr {
-      padding: 3px;
+    padding: 10px 5px 10px 2px;
   }
-  .mainimagetodo {
+  .mainimagetodo,
+  .mainimageprogress,
+  .mainimagetest,
+  .mainimagedone {
       width: 25%;
   }
   .dropdown-container {

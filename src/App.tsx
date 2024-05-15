@@ -41,6 +41,7 @@ function App(this: any) {
         document.getElementsByClassName('component-contain')[0].classList.remove('add-overflow');
       } else {
         document.getElementsByClassName('component-contain')[0].classList.add('add-overflow');
+        adjustElementHeight()
       }
       if (window.innerWidth >= 700) {
         const centeredDiv = document.querySelector('.mobile-nav-bar') as HTMLDivElement;
@@ -79,6 +80,7 @@ function App(this: any) {
         document.getElementsByClassName('component-contain')[0].classList.remove('add-overflow');
       } else {
         document.getElementsByClassName('component-contain')[0].classList.add('add-overflow');
+        adjustElementHeight()
       }
       if (window.innerWidth < 380) {
         (document.getElementsByClassName("parent-kanban")[1] as HTMLElement).classList.add("show1-background");
@@ -128,7 +130,19 @@ let gridObj = React.useRef<any>();
   let kanbanprogressValue: any;
   let storeStatusValue: any
   let storeNewRecord: any;
-
+  function adjustElementHeight() {
+    const element = document.getElementsByClassName('main-content')[0] as HTMLElement;
+    const elementHeight = element.clientHeight -
+      parseFloat(getComputedStyle(element).paddingTop) -
+      parseFloat(getComputedStyle(element).paddingBottom) -
+      parseFloat(getComputedStyle(element).marginTop) -
+      parseFloat(getComputedStyle(element).marginBottom);
+    const filterHeight = document.getElementsByClassName('datasource-filter-container')[0].getBoundingClientRect().height;
+    const titleHeight = document.getElementsByClassName('title-container')[0].getBoundingClientRect().height;
+    const changeElement = document.getElementsByClassName('component-contain')[0] as HTMLElement;
+    const desiredHeight = elementHeight - (filterHeight + titleHeight);
+    changeElement.style.height = (desiredHeight -10)+ 'px';
+  }
   const updateDataSourceObject = (dataSource: any, id: any, updateData: any) => {
     const targetObject = dataSource.find((obj: { Id: any; }) => obj.Id === id);
     if (targetObject) {
