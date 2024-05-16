@@ -1416,7 +1416,7 @@ let gridObj = React.useRef<any>();
           <div className="title-container">
             <div className="extra-circle"></div>
             <div className="title">Sprint Management</div>
-            <button className="button" onClick={renderButton}></button>
+            <button className="button" onClick={renderButton}>+ New Task</button>
             <div className="circle"></div>
           </div>
           <div className="datasource-filter-container">
