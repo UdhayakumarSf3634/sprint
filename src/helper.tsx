@@ -108,7 +108,7 @@ export const cardRendered = (args: any) => {
 // Gantt Function
 export const queryTaskbarInfo = (args: any) => {
   if (args.data.taskData.Status == 'InProgress') {
-    args.progressBarBgColor = 'rgba(222, 204, 251, 1)';
+    args.progressBarBgColor = '#c9a7f4';
     args.taskbarBgColor = 'rgba(222, 204, 251, 0.6)';
     args.taskbarBorderColor = 'rgba(222, 204, 251, 1)';
   } else if (args.data.taskData.Status == 'Open') {
