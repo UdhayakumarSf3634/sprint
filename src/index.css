@@ -321,6 +321,7 @@ opacity: 1;
 
 .parent-kanban:hover, .parent-scheduler:hover, .parent-gantt:hover, .parent-grid:hover{
   border: 1px solid white;
+  border-radius: 8px;
 }
 .circular-image:hover {
   box-shadow: 0 0 10px rgba(13, 148, 136, 1);
